@@ -15,7 +15,7 @@ var config = {
 class App extends Component {
   constructor(props){
     super(props);
-      this.state= {
+      this.state = {
         id:uuid.v1(),
         name:'',
         answers: {
@@ -26,21 +26,31 @@ class App extends Component {
         q5:''
       },
       submitted: false
+
     }
     this.handleQuestionChange = this.handleQuestionChange.bind(this);
   }
 
   handleNameSubmit(event){
-    var name= this.refs.name.value;
+    var name = this.refs.name.value;
     this.setState({name:name}, function(){
       console.log(this.state);
     });
-    console.log(this.state);
     event.preventDefault();
   }
 
   handleQuestionSubmit(event){
-    
+      firebase.database().ref('surveys/'+this.state.id).set({
+      name: this.state.name,
+      answers: this.state.answers
+    });
+
+    this.setState({submitted:true}, function(){
+
+      console.log('Questions submitted...');
+      });
+
+    event.preventDefault();
   }
 
   handleQuestionChange(event){
@@ -124,7 +134,7 @@ class App extends Component {
       questions = '';
 
     }else if (this.state.submitted === true){
-
+      user = <h2>Thank You, {this.state.name}</h2>
     }
     return (
       <div className="App">
