@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
+var uuid = require('uuid');
+var firebase = require('firebase');
+
+var config = {
+    apiKey: "AIzaSyAKjpEl7645w020rmk3iocaKerHdIl5_Ic",
+    authDomain: "basicsurvey-49f45.firebaseapp.com",
+    databaseURL: "https://basicsurvey-49f45.firebaseio.com",
+    storageBucket: "basicsurvey-49f45.appspot.com",
+    messagingSenderId: "840168895841"
+  };
+  firebase.initializeApp(config);
 
 class App extends Component {
   constructor(props){
     super(props);
       this.state= {
-        id:'',
+        id:uuid.v1(),
         name:'',
         answers: {
         q1:'',
