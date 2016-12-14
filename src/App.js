@@ -16,15 +16,24 @@ class App extends Component {
       submitted: false
     }
   }
+
+  handleNameSubmit(event){
+    var name= this.refs.name.value;
+    this.setState({name:name}, function(){
+      console.log(this.state);
+    });
+    console.log(this.state);
+    event.preventDefault();
+  }
   render() {
     var user;
     var questions;
     if(this.state.name && this.state.submitted === false){
-
+      user = <h2>Welcome {this.state.name}</h2>
     } else if (!this.state.name && this.state.submitted === false){
       user = <span>
           <h2>Please enter your name to begin the survey</h2>
-          <form>
+          <form onSubmit={this.handleNameSubmit.bind(this)}>
             <input type="text" placeholder="Enter Name..." ref="name"></input>
           </form>
       </span>;
@@ -34,12 +43,12 @@ class App extends Component {
 
     }
     return (
-      <div className="App">
+      <div className="App text-center">
         <div className="App-header">
           <h2>Basic Ass Survey</h2>
         </div>
-        <div class='centered'>
-          
+        <div className='text-center'>
+          {user}
         </div>
       </div>
     );
