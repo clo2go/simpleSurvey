@@ -12,6 +12,11 @@
   font-size: large;
 }
 
+.container {
+  width: 650px;
+  margin: auto;
+}
+
 input[type='text']{
   padding: 4px;
   width: 350px;
@@ -20,7 +25,7 @@ input[type='text']{
   border: #ccc solid 1px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+form div {
+  margin-bottom: 15px;
+  line-height: 2.2em;
 }
