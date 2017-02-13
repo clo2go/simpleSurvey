@@ -19,7 +19,7 @@
     "eject": "react-scripts eject"
   },
   "description": "testing",
-  "main": "server.js",
+  "main": "App.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/clo2go/simpleSurvey.git"
