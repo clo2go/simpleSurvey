@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 var uuid = require('uuid');
-var firebase = require('firebase');
+import * as firebase from "firebase";
 
 var config = {
     apiKey: "AIzaSyAKjpEl7645w020rmk3iocaKerHdIl5_Ic",
