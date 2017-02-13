@@ -7,10 +7,10 @@
   },
   "dependencies": {
     "create-react-app": "^1.0.4",
-    "firebase": "^3.6.4",
+    "firebase": "^3.6.9",
     "npm": "^4.2.0",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "uuid": "^3.0.1"
   },
   "scripts": {
